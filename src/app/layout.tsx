@@ -37,11 +37,10 @@ export default function RootLayout({
         )}
       >
         <Theme
-          accentColor="blue"
-          grayColor="sand"
+          accentColor="red"
           radius="medium"
           scaling="95%"
-          appearance="light"
+          appearance="dark"
         >
           <Strap />
           <Header />

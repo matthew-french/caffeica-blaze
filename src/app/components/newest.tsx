@@ -1,8 +1,24 @@
-import Link from 'next/link'
+import NextLink from 'next/link'
 import { simplifiedProduct } from '../interface'
 import { client } from '../lib/sanity'
 import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
+
+import {
+  Badge,
+  Box,
+  Button,
+  Card,
+  Flex,
+  Grid,
+  Heading,
+  Link,
+  Select,
+  Separator,
+  Text,
+} from '@radix-ui/themes'
+
+import { Label } from '@radix-ui/react-label'
 
 async function getData() {
   const query = `*[_type == "product" && feature == true][0...4] | order(_createdAt desc) {
@@ -44,6 +60,46 @@ export default async function Newest() {
       </div>
 
       <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+        <Card size="1">
+          <Flex mb="2" position="relative">
+            <img
+              width="280"
+              height="270"
+              src="https://images.unsplash.com/photo-1577210897949-1f56f943bf82?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=560&h=540&q=80&crop=bottom"
+              style={{ borderRadius: 'var(--radius-1)' }}
+            />
+          </Flex>
+
+          <Flex align="end" justify="between" mb="2">
+            <Box>
+              <Flex mb="1">
+                <Link
+                  href="#"
+                  underline="hover"
+                  highContrast
+                  size="2"
+                  color="gray"
+                >
+                  Pants and jeans
+                </Link>
+              </Flex>
+
+              <Heading as="h3" size="3">
+                Jeans #7
+              </Heading>
+            </Box>
+
+            {/* <Text as="div" size="6" weight="bold">
+              $149
+            </Text> */}
+          </Flex>
+
+          <Text as="p" size="2" color="gray" mb="4">
+            Jeans with a sense of nostalgia, as if they carry whispered tales of
+            past adventures.
+          </Text>
+        </Card>
+
         {data.map((product) => (
           <div key={product._id} className="group relative">
             <div className="aspect-square w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:h-80">
@@ -59,7 +115,9 @@ export default async function Newest() {
             <div className="mt-4 flex justify-between">
               <div>
                 <h3 className="text-sm text-gray-700">
-                  <Link href={`/product/${product.slug}`}>{product.name}</Link>
+                  <NextLink href={`/product/${product.slug}`}>
+                    {product.name}
+                  </NextLink>
                 </h3>
                 <p className="mt-1 text-sm text-gray-500">
                   {product.categoryName}

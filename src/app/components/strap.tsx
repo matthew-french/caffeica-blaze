@@ -1,4 +1,6 @@
 import { Container, Flex, Text, Box, Heading } from '@radix-ui/themes'
+import * as VisuallyHidden from '@radix-ui/react-visually-hidden'
+
 import Image from 'next/image'
 
 import '@/styles/strap.css'
@@ -7,14 +9,17 @@ export default function Strap() {
   return (
     <Container size="4" mt="4">
       <Flex direction="row" align="stretch" justify="between">
-        <Box className="logo-box">
+        <Heading as="h1">
           <Image
             src="/images/caffeica-logo.png"
             alt="Hero"
             width={129}
             height={65}
           />
-        </Box>
+          <VisuallyHidden.Root>
+            Caffeica Commercial Coffee Machines
+          </VisuallyHidden.Root>
+        </Heading>
 
         <Flex direction="column" px="4" align="center" justify="end">
           <Text>Perfect for Offices, Restaurants & Cafe's</Text>

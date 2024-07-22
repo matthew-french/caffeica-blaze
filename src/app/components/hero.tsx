@@ -23,12 +23,14 @@ export default async function Hero() {
   }
 
   return (
-    <Container size="4">
-      <Flex className="flex-col md:flex-row bg-purple-950">
+    <Container size="4" mt="2">
+      <Flex direction={{ initial: 'column', md: 'row' }} px="12">
         <Flex
           direction="column"
           align={{ initial: 'start', md: 'center' }}
-          className="mb-6 sm:mb-12 lg:mb-0 lg:w-1/3 lg:pb-24 lg:pt-48"
+          width={{ initial: 'full', md: '1/3' }}
+          mb={{ initial: '12', lg: '0' }}
+          pt={{ initial: '12', lg: '48' }}
         >
           <Heading
             as="h1"
@@ -54,7 +56,10 @@ export default async function Hero() {
             needs of any organisation.
           </Text>
         </Flex>
-        <Flex className="mb-12 md:mb-16 lg:w-2/3">
+        <Flex
+          width={{ initial: 'full', md: '2/3' }}
+          mb={{ initial: '12', md: '16' }}
+        >
           <div className="relative left-12 top-12 z-6 -ml-12 overflow-hidden rounded-lg bg-gray-100 shadow-lg md:left-16 md:top-16 lg:ml-0">
             <Image
               src={urlFor(data.image1).url()}
