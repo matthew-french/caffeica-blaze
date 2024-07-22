@@ -12,7 +12,9 @@ export default function MainMenu() {
         <div>Mobile</div>
       ) : (
         <>
-          <NavigationMenuDemo />
+          <div className="max-w-6xl mx-auto w-screen p-2">
+            <NavigationMenuDemo />
+          </div>
         </>
       )}
     </header>

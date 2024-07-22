@@ -24,7 +24,7 @@ export default async function Hero() {
 
   return (
     <Container size="4">
-      <Flex className="flex-col md:flex-row">
+      <Flex className="flex-col md:flex-row bg-purple-950">
         <Flex
           direction="column"
           align={{ initial: 'start', md: 'center' }}

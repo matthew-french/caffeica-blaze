@@ -41,7 +41,7 @@ export default function RootLayout({
           grayColor="sand"
           radius="medium"
           scaling="95%"
-          appearance="dark"
+          appearance="light"
         >
           <Strap />
           <Header />
