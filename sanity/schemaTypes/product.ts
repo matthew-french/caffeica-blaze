@@ -38,6 +38,11 @@ export default {
       type: 'string',
     },
     {
+      name: 'feature',
+      title: 'Featured Product',
+      type: 'boolean',
+    },
+    {
       name: 'category',
       title: 'Product Category',
       type: 'reference',
