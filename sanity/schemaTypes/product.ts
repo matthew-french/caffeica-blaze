@@ -15,6 +15,13 @@ export default {
       of: [{type: 'image'}],
     },
     {
+      name: 'summary',
+      type: 'text',
+      title: 'Short summary of product',
+      required: true,
+      validation: (rule) => rule.required().min(25).max(140),
+    },
+    {
       name: 'description',
       type: 'text',
       title: 'Description of product',
@@ -28,19 +35,49 @@ export default {
       },
     },
     {
-      name: 'price',
-      title: 'Price',
+      name: 'volume',
       type: 'number',
+      title: 'Volume of drinks per day',
     },
     {
-      name: 'price_id',
-      title: 'Stripe Price ID',
+      name: 'connection',
       type: 'string',
+      title: 'Water connection',
+    },
+    {
+      name: 'screen',
+      type: 'string',
+      title: 'Screen Type',
+    },
+    {
+      name: 'paymentMethod',
+      type: 'string',
+      title: 'Payment Method',
+    },
+    {
+      name: 'requirements',
+      type: 'string',
+      title: 'Specific drink requirements',
+    },
+    {
+      name: 'video',
+      type: 'url',
+      title: 'Product Video',
     },
     {
       name: 'feature',
       title: 'Featured Product',
       type: 'boolean',
+    },
+    {
+      name: 'brand',
+      title: 'Product Brand',
+      type: 'reference',
+      to: [
+        {
+          type: 'brand',
+        },
+      ],
     },
     {
       name: 'category',

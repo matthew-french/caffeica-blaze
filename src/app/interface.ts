@@ -3,6 +3,7 @@ export interface simplifiedProduct {
   imageUrl: string
   price: number
   slug: string
+  summary: string
   categoryName: string
   name: string
 }
