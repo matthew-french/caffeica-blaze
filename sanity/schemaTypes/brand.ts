@@ -8,5 +8,15 @@ export default {
       title: 'Name of Brand',
       type: 'string',
     },
+    {
+      name: 'images',
+      type: 'image',
+      title: 'Brand Logo',
+    },
+    {
+      name: 'summary',
+      type: 'text',
+      title: 'Brand Summary',
+    },
   ],
 }

@@ -18,7 +18,7 @@ export default function ProductCard({
   slug,
 }: ProductCardProps) {
   return (
-    <Card size="2">
+    <Card size="1">
       <Inset clip="padding-box" side="top" pb="current">
         <img
           width="280"
@@ -28,7 +28,7 @@ export default function ProductCard({
         />
       </Inset>
 
-      <Flex align="end" justify="between" mb="2">
+      <Flex align="end" justify="between" mb="1">
         <Box>
           <Heading as="h3" size="4">
             {name}
@@ -36,8 +36,8 @@ export default function ProductCard({
         </Box>
 
         {/* <Text as="div" size="6" weight="bold">
-        $149
-      </Text> */}
+          $149
+        </Text> */}
       </Flex>
 
       <Text as="p" size="3" color="gray" mb="4">

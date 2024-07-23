@@ -1,14 +1,15 @@
 import Hero from '@/app/components/hero'
 import Newest from '@/app/components/newest'
 
-import { ExampleThemesEcommerce } from '@/app/components/example'
+import { Container } from '@radix-ui/themes'
 
 export default function Home() {
   return (
     <>
-      <Hero />
-      <Newest />
-      <ExampleThemesEcommerce />
+      <Container size="4">
+        <Hero />
+        <Newest />
+      </Container>
     </>
   )
 }

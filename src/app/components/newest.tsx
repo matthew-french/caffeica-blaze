@@ -2,13 +2,14 @@ import NextLink from 'next/link'
 import { simplifiedProduct } from '../interface'
 import { client } from '../lib/sanity'
 import { ArrowRight } from 'lucide-react'
+
 import ProductCard from './product-card'
 
-import { Grid } from '@radix-ui/themes'
+import { Grid, Container, Section } from '@radix-ui/themes'
+
 async function getData() {
   const query = `*[_type == "product" && feature == true][0...4] | order(_createdAt desc) {
         _id,
-          price,
         name,
           "slug": slug.current,
           "categoryName": category->name,
@@ -30,8 +31,8 @@ export default async function Newest() {
   }
 
   return (
-    <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-      <div className="flex justify-between items-center">
+    <Section size="1">
+      {/* <div className="flex justify-between items-center">
         <h2 className="text-2xl font-bold tracking-tight text-gray-900">
           Our Newest products
         </h2>
@@ -45,20 +46,21 @@ export default async function Newest() {
             <ArrowRight />
           </span>
         </NextLink>
-      </div>
-
-      <Grid columns={{ initial: '2', md: '4', lg: '6' }}>
+      </div> */}
+      <Grid gap="4" columns={{ initial: '2', md: '4', lg: '4' }}>
         {data.map((product) => (
           <div key={product._id}>
             <ProductCard
               id={product._id}
               name={product.name}
+              summary={product.summary}
+              category={product.categoryName}
               image={product.imageUrl}
               slug={product.slug}
             />
           </div>
         ))}
       </Grid>
-    </div>
+    </Section>
   )
 }

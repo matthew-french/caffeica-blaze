@@ -7,16 +7,6 @@ export default function MainMenu() {
   const isMobile = useMediaQuery('(max-width: 830px)')
 
   return (
-    <header>
-      {isMobile ? (
-        <div>Mobile</div>
-      ) : (
-        <>
-          <div className="max-w-6xl mx-auto w-screen p-2">
-            <NavigationMenuDemo />
-          </div>
-        </>
-      )}
-    </header>
+    <header>{isMobile ? <div>Mobile</div> : <NavigationMenuDemo />}</header>
   )
 }

@@ -40,7 +40,7 @@ export default function RootLayout({
           accentColor="red"
           radius="medium"
           scaling="95%"
-          appearance="dark"
+          appearance="light"
         >
           <Strap />
           <Header />

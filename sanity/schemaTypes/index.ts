@@ -1,5 +1,5 @@
 import category from './category'
-import brands from './brand'
+import brand from './brand'
 import heroImages from './heroImages'
 import product from './product'
 

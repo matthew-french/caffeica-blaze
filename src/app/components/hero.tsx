@@ -2,15 +2,13 @@ import Image from 'next/image'
 import { client, urlFor } from '@/app/lib/sanity'
 import Link from 'next/link'
 
-import { Container, Flex, Heading, Text, Box } from '@radix-ui/themes'
+import { Section, Flex, Heading, Text, Box } from '@radix-ui/themes'
 
 async function getData() {
   // const query = ''
   const query = `*[_type == "heroImage"][0]`
 
   const data = await client.fetch(query)
-
-  console.log(data)
 
   return data
 }
@@ -23,64 +21,61 @@ export default async function Hero() {
   }
 
   return (
-    <Container size="4" mt="2">
-      <Flex direction={{ initial: 'column', md: 'row' }} px="12">
-        <Flex
-          direction="column"
-          align={{ initial: 'start', md: 'center' }}
-          width={{ initial: 'full', md: '1/3' }}
-          mb={{ initial: '12', lg: '0' }}
-          pt={{ initial: '12', lg: '48' }}
-        >
-          <Heading
-            as="h1"
-            size={{
-              initial: '5',
-              md: '7',
-            }}
-            weight="bold"
-          >
-            The perfect brew for your business is right here.
-          </Heading>
-          <Text
-            size={{
-              initial: '2',
-              md: '5',
-            }}
-          >
-            Welcome to Caffeica, your premier destination for commercial coffee
-            machines and vending solutions. We offer top-quality refreshment
-            services and beverage solutions available for cash purchase, lease,
-            or rental. With our extensive range of hot drink machines and
-            vending options, we have the perfect model to cater to the unique
-            needs of any organisation.
-          </Text>
+    <Section size="2" px="1">
+      <Flex direction="row">
+        <Flex direction="column" align="end" width="50%" justify="center">
+          <Box>
+            <Heading
+              as="h1"
+              size={{ initial: '5', md: '8' }}
+              weight="bold"
+              mb="2"
+            >
+              The perfect brew for your business is right here.
+            </Heading>
+            <Text size={{ initial: '2', md: '4' }}>
+              Welcome to Caffeica, your premier destination for commercial
+              coffee machines and vending solutions. We offer top-quality
+              refreshment services and beverage solutions available for cash
+              purchase, lease, or rental. With our extensive range of hot drink
+              machines and vending options, we have the perfect model to cater
+              to the unique needs of any organisation.
+            </Text>
+          </Box>
         </Flex>
-        <Flex
-          width={{ initial: 'full', md: '2/3' }}
-          mb={{ initial: '12', md: '16' }}
-        >
-          <div className="relative left-12 top-12 z-6 -ml-12 overflow-hidden rounded-lg bg-gray-100 shadow-lg md:left-16 md:top-16 lg:ml-0">
+        <Flex direction="column" width="50%" align="center" justify="center">
+          <Box
+            width="300px"
+            height="300px"
+            position="relative"
+            left="120px"
+            top="120px"
+            overflow="hidden"
+            style={{ borderRadius: 'var(--radius-5)' }}
+          >
             <Image
               src={urlFor(data.image1).url()}
               alt="Great Photo"
-              className="h-full w-full object-cover object-center"
               priority
               width={500}
               height={500}
             />
-          </div>
+          </Box>
 
-          <div className="overflow-hidden rounded-lg bg-gray-100 shadow-lg">
+          <Box
+            overflow="hidden"
+            width="300px"
+            height="300px"
+            style={{ borderRadius: 'var(--radius-5)' }}
+          >
             <Image
               src={urlFor(data.image2).url()}
               alt="Great Photo"
-              className="h-full w-full object-cover object-center"
               width={500}
               height={500}
               priority
             />
-          </div>
+          </Box>
         </Flex>
       </Flex>
 
@@ -106,6 +101,6 @@ export default async function Hero() {
           </Link>
         </div>
       </div> */}
-    </Container>
+    </Section>
   )
 }
