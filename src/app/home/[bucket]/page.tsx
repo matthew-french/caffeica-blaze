@@ -1,11 +1,14 @@
-// import { Suspense } from 'react'
+import { Suspense } from 'react'
 import { BUCKETS } from '@/constants/index'
 
 // import { BestOffersSection } from "views/Homepage/BestOffersSection"
 // import { CarouselSectionSkeleton } from "views/Homepage/CarouselSection"
-// import { CategoriesSection, CategoriesSectionSkeleton } from "views/Homepage/CategoriesSection"
+import {
+  CategoriesSection,
+  CategoriesSectionSkeleton,
+} from '@/views/Homepage/CategoriesSection'
 // import { EverythingUnderSection } from "views/Homepage/EverythingUnderSection"
-// import { AnnouncementBar } from "components/AnnouncementBar/AnnouncementBar"
+import { AnnouncementBar } from '@/components/AnnouncementBar/AnnouncementBar'
 import { HeroSection } from '@/views/Homepage/HeroSection'
 
 export const revalidate = 3600
@@ -20,8 +23,8 @@ export default function Homepage({
   params: { bucket: string }
 }) {
   const heroTitles: { [key: string]: string } = {
-    a: 'Your daily trendsetting deals',
-    b: 'Spring into Savings! Up to 60% Off',
+    a: 'Find the best deal to lease your new coffee machine and find your perfect brew.',
+    b: 'We can help you find the perfect coffee machine for your home or office.',
   }
 
   return (
@@ -30,17 +33,18 @@ export default function Homepage({
         className="-order-1 md:-order-2"
         title={heroTitles[bucket]}
       />
-      {/* <AnnouncementBar className="-order-2 md:-order-1" />
+
+      <AnnouncementBar className="-order-2 md:-order-1" />
 
       <Suspense fallback={<CategoriesSectionSkeleton />}>
         <CategoriesSection />
       </Suspense>
 
-      <Suspense fallback={<CarouselSectionSkeleton />}>
+      {/* <Suspense fallback={<CarouselSectionSkeleton />}>
         <BestOffersSection />
-      </Suspense>
+      </Suspense> */}
 
-      <Suspense fallback={<CarouselSectionSkeleton />}>
+      {/* <Suspense fallback={<CarouselSectionSkeleton />}>
         <EverythingUnderSection />
       </Suspense> */}
     </div>

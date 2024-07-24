@@ -15,6 +15,8 @@ const config = {
       backgroundImage: {
         'custom-gradient':
           'linear-gradient(7deg, rgba(2,0,36,1) 0%, rgba(0,0,0,1) 35%, rgba(100,121,125,1) 100%)',
+        'color-gradient':
+          'linear-gradient(7deg, rgba(50,50,50,1) 27%, rgba(8,14,156,1) 74%, rgba(129,5,5,1) 99%)',
       },
       keyframes: {
         'accordion-down': {

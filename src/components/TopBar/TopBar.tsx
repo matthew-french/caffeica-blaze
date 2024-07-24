@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export async function TopBar() {
   return (
-    <header className="hidden bg-white py-4 md:block bg-custom-gradient text-white">
+    <header className="hidden bg-white py-4 md:block bg-color-gradient text-white">
       <div className="max-w-container-lg mx-auto flex items-center justify-between px-4">
         <Link prefetch={false} href="/" className="inter text-3xl font-bold">
           Caffeica
