@@ -23,7 +23,7 @@ export default function Homepage({
   params: { bucket: string }
 }) {
   const heroTitles: { [key: string]: string } = {
-    a: 'Find the best deal to lease your new coffee machine and find your perfect brew.',
+    a: `Find your perfect brew with our leased coffee machines.`,
     b: 'We can help you find the perfect coffee machine for your home or office.',
   }
 

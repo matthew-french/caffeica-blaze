@@ -1,9 +1,9 @@
 // import AddToBag from "@/app/components/AddToBag";
 // import CheckoutNow from "@/app/components/CheckoutNow";
-import ImageGallery from '@/app/components/image-gallery'
+import ImageGallery from '@/components/image-gallery'
 import { fullProduct } from '@/app/interface'
-import { client } from '@/app/lib/sanity'
-import { Button } from '@/components/ui/button'
+import { sanity } from '@/clients/sanity'
+import { Button } from '@/components/Button/Button'
 import { Star, Truck } from 'lucide-react'
 
 async function getData(slug: string) {
@@ -18,7 +18,7 @@ async function getData(slug: string) {
           price_id
       }`
 
-  const data = await client.fetch(query)
+  const data = await sanity.fetch(query)
 
   return data
 }

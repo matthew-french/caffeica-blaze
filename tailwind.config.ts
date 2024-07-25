@@ -96,6 +96,7 @@ const config = {
       },
       maxWidth: {
         ...defaultTheme.width,
+        'container-xl': '1600px',
         'container-lg': '1440px',
         'container-md': '1280px',
         'container-sm': '1024px',
