@@ -19,7 +19,7 @@ export function HeroSection({
               <div className="sm:text-center lg:text-left">
                 <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
                   <span className="block xl:inline">Your Impressive</span>{' '}
-                  <span className="block text-indigo-600 xl:inline">
+                  <span className="block text-red-600 xl:inline">
                     Hero Section
                   </span>
                 </h1>
@@ -29,6 +29,13 @@ export function HeroSection({
                 </p>
                 <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                   <div className="rounded-md shadow">
+                    <Button
+                      size="xl"
+                      variant="secondary"
+                      className="py-[10px] text-[21px] md:py-[28px] md:text-[23px]"
+                    >
+                      See on GitHub
+                    </Button>
                     <a
                       href="#"
                       className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-black hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"
@@ -85,7 +92,7 @@ export function HeroSection({
               layout="responsive"
               width={1200}
               height={800}
-              className="object-cover h-full w-full"
+              className="inset-0 object-cover h-full w-full"
             />
           </div>
         </div>
