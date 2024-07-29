@@ -30,11 +30,11 @@ export default function Homepage({
   return (
     <div className="flex w-full flex-col">
       <HeroSection
-        className="-order-1 md:-order-2"
+        className="-order-1 md:-order-1"
         title={heroTitles[bucket]}
       />
 
-      <AnnouncementBar className="-order-2 md:-order-1" />
+      <AnnouncementBar className="-order-2 md:-order-2" />
 
       <Suspense fallback={<CategoriesSectionSkeleton />}>
         <CategoriesSection />

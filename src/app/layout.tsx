@@ -42,127 +42,131 @@ const navigationItems: NavItem[] = [
     href: '/',
   },
   {
-    text: 'Fashion',
-    href: '/category/fashion',
-    submenu: {
-      variant: 'text-grid',
-      items: [
-        {
-          text: 'Women',
-          items: [
-            { text: 'Shirts & Blouses', href: '/search' },
-            { text: 'Pants', href: '/search' },
-            { text: 'Blazers & Vests', href: '/search' },
-            { text: 'Cardigans & Sweaters', href: '/search' },
-          ],
-        },
-        {
-          text: 'Men',
-          items: [
-            { text: 'T-shirts & Tanks', href: '/search' },
-            { text: 'Pants', href: '/search' },
-            { text: 'Hoodies & Sweatshirts', href: '/search' },
-            { text: 'Blazers & Suits', href: '/search' },
-          ],
-        },
-        {
-          text: 'Kids',
-          items: [
-            { text: 'Clothing', href: '/search' },
-            { text: 'Outerwear', href: '/search' },
-            { text: 'Activewear', href: '/search' },
-            { text: 'Accessories', href: '/search' },
-          ],
-        },
-      ],
-    },
-  },
-  {
-    text: 'Electronics',
-    href: '/category/electronics',
+    text: 'Coffee Machines',
+    href: '/category/clp/coffee-machines',
     submenu: {
       variant: 'image-grid',
       items: [
         {
-          href: '/category/electronics',
+          href: '/category/plp/bean-to-cup',
           image: '/menu/electronics-1.png',
-          text: 'Best Offers',
+          text: 'Bean to Cup',
         },
         {
-          href: '/category/electronics',
+          href: '/category/coffee-machines/traditional-coffee-machines',
           image: '/menu/electronics-2.png',
-          text: 'New',
+          text: 'Traditional Coffee Machines',
         },
         {
-          href: '/category/electronics',
+          href: '/category/coffee-machines/instant-coffee-machines',
           image: '/menu/electronics-3.png',
-          text: 'Holiday',
+          text: 'Instant Coffee Machines',
         },
         {
-          href: '/category/electronics',
+          href: '/category/coffee-machines/hot-drinks-vending-machines',
           image: '/menu/electronics-4.png',
-          text: 'Sale',
+          text: 'Hot Drinks Vending Machines',
+        },
+        {
+          href: '/category/coffee-machines/filter-coffee-machines',
+          image: '/menu/electronics-4.png',
+          text: 'Grinders',
         },
       ],
     },
   },
   {
-    text: 'Beauty',
-    href: '/category/beauty',
-    submenu: {
-      variant: 'text-image-grid',
-      items: [
-        { text: 'Women', href: '/search' },
-        { text: 'Men', href: '/search' },
-        { text: 'Kids', href: '/search' },
-        { text: 'Sport', href: '/search' },
-        { text: 'T-shirts & Tanks', href: '/search' },
-        { text: 'Pants', href: '/search' },
-        { text: 'Hoodies & Sweatshirts', href: '/search' },
-        { text: 'Blazers & Suits', href: '/search' },
-        {
-          href: '#',
-          image: '/menu/beauty-1.png',
-          text: 'Home',
-        },
-        {
-          href: '#',
-          image: '/menu/beauty-2.png',
-          text: 'Beauty',
-        },
-        {
-          href: '#',
-          image: '/menu/beauty-3.png',
-          text: 'Holiday',
-        },
-      ],
-    },
-  },
-  {
-    text: 'Furniture',
-    href: '/category/furniture',
+    text: 'Coffee',
+    href: '/category/coffee',
     submenu: {
       variant: 'image-grid',
       items: [
         {
-          href: '/category/furniture',
-          image: '/menu/furniture-1.png',
-          text: 'Decor',
+          href: '/category/coffee/coffee-beans',
+          image: '/menu/electronics-1.png',
+          text: 'Coffee Beans',
         },
         {
-          href: '/category/furniture',
-          image: '/menu/furniture-2.png',
-          text: 'Furniture',
+          href: '/category/coffee/instant-and-filter-coffee',
+          image: '/menu/electronics-2.png',
+          text: 'Instant & Filter Coffee',
         },
         {
-          href: '/category/furniture',
-          image: '/menu/furniture-3.png',
-          text: 'Bags',
+          href: '/category/coffee/coffee-pods',
+          image: '/menu/electronics-3.png',
+          text: 'Coffee Pods',
         },
         {
-          href: '/category/furniture',
-          image: '/menu/furniture-4.png',
-          text: 'Sofas',
+          href: '/category/coffee/sachets',
+          image: '/menu/electronics-4.png',
+          text: 'Sachets',
+        },
+        {
+          href: '/category/coffee/tea',
+          image: '/menu/electronics-4.png',
+          text: 'Tea',
+        },
+        {
+          href: '/category/coffee/whiteners-and-chocolates',
+          image: '/menu/electronics-4.png',
+          text: 'Whiteners & Chocolates',
+        },
+      ],
+    },
+  },
+  {
+    text: 'Vending Machines',
+    href: '/category/vending-machines',
+    submenu: {
+      variant: 'image-grid',
+      items: [
+        {
+          href: '/category/vending-machines/hot-drinks-vending-machines',
+          image: '/menu/electronics-1.png',
+          text: 'Hot Drinks Vending Machines',
+        },
+        {
+          href: '/category/vending-machines/snacks-and-drinks-vending-machines',
+          image: '/menu/electronics-2.png',
+          text: 'Snacks & Drinks Vending Machines',
+        },
+      ],
+    },
+  },
+  {
+    text: 'Water Dispensers',
+    href: '/category/water-dispensers',
+    submenu: {
+      variant: 'image-grid',
+      items: [
+        {
+          href: '/category/water-dispensers/bottled-water-coolers',
+          image: '/menu/electronics-1.png',
+          text: 'Instant Taps',
+        },
+        {
+          href: '/category/water-dispensers/instant-taps',
+          image: '/menu/electronics-2.png',
+          text: 'Water Dispensers',
+        },
+      ],
+    },
+  },
+  {
+    text: 'Services',
+    href: '/category/services',
+    submenu: {
+      variant: 'image-grid',
+      items: [
+        {
+          href: '/category/services/installation-servicing-repairs',
+          image: '/menu/electronics-1.png',
+          text: 'Installation, servicing & repairs',
+        },
+        {
+          href: '/category/services/leasing-and-rental',
+          image: '/menu/electronics-2.png',
+          text: 'Leasing & rental',
         },
       ],
     },
