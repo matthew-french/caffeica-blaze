@@ -1,5 +1,5 @@
-// import withBundleAnalyzer from '@next/bundle-analyzer'
-import withVercelToolbar from '@vercel/toolbar/plugins/next'
+import withBundleAnalyzer from '@next/bundle-analyzer'
+// import withVercelToolbar from '@vercel/toolbar/plugins/next'
 import withPlugins from 'next-compose-plugins'
 
 /**
@@ -8,8 +8,8 @@ import withPlugins from 'next-compose-plugins'
 const config = withPlugins(
   [
     [
-      withVercelToolbar(),
-      //     withBundleAnalyzer({ enabled: process.env.ANALYZE === 'true' }),
+      // withVercelToolbar(),
+      withBundleAnalyzer({ enabled: process.env.ANALYZE === 'true' }),
     ],
   ],
   {

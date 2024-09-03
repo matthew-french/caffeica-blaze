@@ -103,6 +103,8 @@ function handleCLPMiddleware(request: NextRequest) {
   const url = request.nextUrl.clone()
   const page = request.nextUrl.searchParams.get('page')
 
+  console.log('CLP page', page)
+
   if (page) {
     url.pathname = `category/clp/${request.nextUrl.pathname.split('/')[2]}/${page}`
 

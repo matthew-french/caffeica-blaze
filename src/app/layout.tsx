@@ -12,28 +12,9 @@ import { NavItem } from '@/components/NavigationBar/types'
 import { Footer } from '@/components/Footer/Footer'
 
 export const metadata: Metadata = {
-  title: 'Next.js Enterprise Commerce | Blazity',
-  description: 'AI-FIRST NEXT.JS STOREFRONT FOR COMPOSABLE COMMERCE',
+  title: 'Caffeica Enterprise Catalog',
+  description: 'Caffeica Enterprise Catalog Powered by Sanity',
   metadataBase: new URL('http://localhost/:3000'),
-  openGraph: {
-    title: 'Next.js Enterprise Commerce | Blazity',
-    description: 'AI-FIRST NEXT.JS STOREFRONT FOR COMPOSABLE COMMERCE',
-    images: ['/opengraph-image.jpg'],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Next.js Enterprise Commerce | Blazity',
-    description: 'AI-FIRST NEXT.JS STOREFRONT FOR COMPOSABLE COMMERCE',
-    creator: '@blazity',
-    images: ['/opengraph-image.jpg'],
-  },
-  verification: {
-    google: 'google',
-    yandex: 'yandex',
-    yahoo: 'yahoo',
-  },
-  generator: 'Next.js',
-  applicationName: 'Next.js',
 }
 
 const navigationItems: NavItem[] = [
@@ -43,17 +24,17 @@ const navigationItems: NavItem[] = [
   },
   {
     text: 'Coffee Machines',
-    href: '/category/clp/coffee-machines',
+    href: '/category/coffee-machines',
     submenu: {
       variant: 'image-grid',
       items: [
         {
-          href: '/category/plp/bean-to-cup',
+          href: '/category/coffee-machines?page=bean-to-cup',
           image: '/menu/electronics-1.png',
           text: 'Bean to Cup',
         },
         {
-          href: '/category/coffee-machines/traditional-coffee-machines',
+          href: '/category/coffee-machines?page=traditional-coffee-machines',
           image: '/menu/electronics-2.png',
           text: 'Traditional Coffee Machines',
         },
