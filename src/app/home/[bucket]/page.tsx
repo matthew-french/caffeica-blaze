@@ -8,7 +8,7 @@ import {
   CategoriesSectionSkeleton,
 } from '@/views/Homepage/CategoriesSection'
 // import { EverythingUnderSection } from "views/Homepage/EverythingUnderSection"
-import { AnnouncementBar } from '@/components/AnnouncementBar/AnnouncementBar'
+
 import { HeroSection } from '@/views/Homepage/HeroSection'
 
 export const revalidate = 3600
@@ -34,19 +34,9 @@ export default function Homepage({
         title={heroTitles[bucket]}
       />
 
-      <AnnouncementBar className="-order-2 md:-order-2" />
-
       <Suspense fallback={<CategoriesSectionSkeleton />}>
         <CategoriesSection />
       </Suspense>
-
-      {/* <Suspense fallback={<CarouselSectionSkeleton />}>
-        <BestOffersSection />
-      </Suspense> */}
-
-      {/* <Suspense fallback={<CarouselSectionSkeleton />}>
-        <EverythingUnderSection />
-      </Suspense> */}
     </div>
   )
 }

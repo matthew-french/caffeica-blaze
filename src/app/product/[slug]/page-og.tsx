@@ -1,6 +1,6 @@
 // import AddToBag from "@/app/components/AddToBag";
 // import CheckoutNow from "@/app/components/CheckoutNow";
-import ImageGallery from '@/components/image-gallery'
+// import ImageGallery from '@/components/image-gallery'
 import { fullProduct } from '@/app/interface'
 import { sanity } from '@/clients/sanity'
 import { Button } from '@/components/Button/Button'
@@ -36,8 +36,6 @@ export default async function ProductPge({
     <div className="bg-white">
       <div className="mx-auto max-w-screen-xl px-4 md:px-8">
         <div className="grid gap-8 md:grid-cols-2">
-          <ImageGallery images={data.images} />
-
           <div className="md:py-8">
             <div className="mb-2 md:mb-3">
               <span className="mb-0.5 inline-block text-gray-500">

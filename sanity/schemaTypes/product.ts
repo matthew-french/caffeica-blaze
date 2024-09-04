@@ -19,7 +19,7 @@ export default {
       type: 'text',
       title: 'Short summary of product',
       required: true,
-      validation: (rule) => rule.required().min(25).max(140),
+      validation: (rule: any) => rule.required().min(25).max(140),
     },
     {
       name: 'description',

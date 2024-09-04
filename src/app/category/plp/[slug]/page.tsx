@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 
-import { SearchParamsType } from '@/types'
+interface SearchParamsType {
+  query: string
+  page: number
+}
 
 interface ProductListingPageProps {
   searchParams: SearchParamsType

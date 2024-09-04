@@ -1,11 +1,10 @@
 import { sanity } from '@/clients/sanity'
 
 import { Skeleton } from '@/components/Skeleton/Skeleton'
-// import { env } from "env.mjs"
+
 import { unstable_cache } from 'next/cache'
 import Image from 'next/image'
 import Link from 'next/link'
-import { getDemoCategories, isDemoMode } from '@/utils/demoUtils'
 
 export async function CategoriesSection() {
   const categories = await getCategories()
