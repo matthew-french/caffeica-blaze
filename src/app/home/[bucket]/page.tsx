@@ -34,6 +34,8 @@ export default function Homepage({
         title={heroTitles[bucket]}
       />
 
+      {bucket}
+
       <Suspense fallback={<CategoriesSectionSkeleton />}>
         <CategoriesSection />
       </Suspense>

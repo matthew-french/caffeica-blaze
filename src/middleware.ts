@@ -1,8 +1,6 @@
-import { ScalableBloomFilter } from 'bloom-filters'
 import { NextRequest, NextResponse } from 'next/server'
 import { getBucket } from '@/utils/abTesting'
-import { BUCKETS, facetParams } from '@/constants/index'
-import GeneratedBloomFilter from '@/redirects/bloom-filter.json'
+import { BUCKETS } from '@/constants/index'
 
 type RedirectEntry = {
   destination: string
@@ -15,7 +13,6 @@ type Route = {
   buckets: readonly string[]
 }
 
-const BLOOM_FILTER = ScalableBloomFilter.fromJSON(GeneratedBloomFilter as any)
 const ROUTES: Record<string, Route | undefined> = {
   '/': {
     page: '/home',
@@ -27,18 +24,8 @@ const ROUTES: Record<string, Route | undefined> = {
 export async function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname
 
-  // Bloom filters gives false positives for `/`
-  const homeAwarePathname = pathname === '/' ? '/home' : pathname
-
-  if (BLOOM_FILTER.has(homeAwarePathname)) {
-    const response = await handleRedirectsMiddleware(request)
-
-    if (response) {
-      return response
-    }
-  }
-
   const route = ROUTES[pathname]
+
   if (route) {
     return handleAbTestingMiddleware(request, route)
   }
@@ -52,33 +39,6 @@ export async function middleware(request: NextRequest) {
   }
 
   return NextResponse.next()
-}
-
-async function handleRedirectsMiddleware(request: NextRequest) {
-  const api = new URL(
-    `/api/redirects?pathname=${encodeURIComponent(request.nextUrl.pathname)}`,
-    request.nextUrl.origin
-  )
-
-  try {
-    const redirectData = await fetch(api)
-
-    if (redirectData.ok) {
-      const redirectEntry = (await redirectData.json()) as
-        | RedirectEntry
-        | undefined
-
-      if (redirectEntry) {
-        const statusCode = redirectEntry.permanent ? 308 : 307
-        return NextResponse.redirect(
-          new URL(redirectEntry.destination, request.nextUrl.origin),
-          statusCode
-        )
-      }
-    }
-  } catch (error) {
-    console.error(error)
-  }
 }
 
 function handleAbTestingMiddleware(request: NextRequest, route: Route) {
@@ -139,29 +99,18 @@ function isCLP(request: NextRequest): boolean {
   const isCategory = request.nextUrl.pathname.startsWith('/category/')
   const isInternalRoute = request.nextUrl.pathname.startsWith('/category/clp/')
 
-  console.log(facetParams)
-
-  const isFaceted = facetParams.some((param) =>
-    request.nextUrl.searchParams.has(param)
-  )
-
   console.log('CLP isCategory', isCategory)
   console.log('CLP isInternalRoute', isInternalRoute)
-  console.log('CLP isFaceted', isFaceted)
 
-  return isCategory && !isFaceted && !isInternalRoute
+  return isCategory && !isInternalRoute
 }
 
 function isPLP(request: NextRequest): boolean {
   const isCategory = request.nextUrl.pathname.startsWith('/category/')
   const isInternalRoute = request.nextUrl.pathname.startsWith('/category/plp/')
-  const isFaceted = facetParams.some((param) =>
-    request.nextUrl.searchParams.has(param)
-  )
 
   console.log('PLP isCategory', isCategory)
   console.log('PLP isInternalRoute', isInternalRoute)
-  console.log('PLP isFaceted', isFaceted)
 
-  return isCategory && isFaceted && !isInternalRoute
+  return isCategory && !isInternalRoute
 }
